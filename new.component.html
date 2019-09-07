@@ -1,0 +1,39 @@
+
+<h4 style="text-align: center">BANK SEARCH APPLICATION</h4>
+
+<div >
+    <select #loc name="banks" id="dropdown" onChange="submit()">
+        <option >BENGALURU</option>
+        <option >MUMBAI</option>
+        <option >KOLKATA</option>
+        <option >DELHI</option>
+        <option >CUTTACK</option>
+    </select>
+    </div>
+    <p>LIST OF BANKS IN {{loc.value}} <input type="text" placeholder="search" [(ngModel)]="bank"></p>
+    <button (click)="search()">MUMBAI</button>
+            <button (click)="search1()">BENGALURU</button>
+            <button (click)="search2()">DELHI</button>
+            <button (click)="search3()">KOLKATA</button>
+            <button (click)="search4()">CUTTACK</button>
+    <table border=1>
+        <tr>
+        <td>Action</td>
+        <td>Bank name</td>
+        <td>Ifsc</td>
+        <td>bank id </td>
+        <td>branch</td>
+        </tr>
+        
+            <tr *ngFor='let a of list let i=index'>
+                    <td>{{i+1}}</td>
+                    <td>{{a.bank_name}}</td>
+                    <td>{{a.ifsc}}</td>
+                    <td> {{a.bank_id}}</td>
+                    <td>{{a.branch}}</td>
+            </tr>   
+        
+    </table>
+    
+
+
